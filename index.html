@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of Philosophy - Infographic</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#FAFAF9',
+                            100: '#F5F5F4',
+                            200: '#E7E5E4',
+                            300: '#D6D3D1',
+                            400: '#A8A29E',
+                            500: '#78716C',
+                            600: '#57534E',
+                            700: '#44403C',
+                            800: '#292524',
+                            900: '#1C1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
+        body {
+            background-color: #FAFAF9;
+        }
+    </style>
+</head>
+<body class="text-stone-800 antialiased selection:bg-amber-100">
+
+    <!-- HERO SECTION -->
+    <header class="relative py-20 px-4 md:py-32 overflow-hidden bg-stone-900 text-stone-100">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+           <svg width="100%" height="100%">
+             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
+             </pattern>
+             <rect width="100%" height="100%" fill="url(#grid)" />
+           </svg>
+        </div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-800 border border-stone-700 text-amber-400 text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            Data Visualization
+          </div>
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-stone-400">
+            School of Philosophy
+          </h1>
+          <p class="text-lg md:text-2xl text-stone-400 max-w-2xl mx-auto font-light leading-relaxed">
+            30 մասնակից։ 30 աշխարհայացք։ Մեկ նպատակ։
+            <br class="hidden md:block"/>
+            <span class="text-stone-500 text-base mt-4 block">
+              Սա մեր խմբի հավաքական գիտակցության վերլուծությունն է։
+            </span>
+          </p>
+          
+          <div class="mt-12 flex justify-center">
+            <i data-lucide="arrow-down" class="text-stone-500 animate-bounce w-6 h-6"></i>
+          </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-32">
+        
+        <!-- KPI ROW -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 -mt-24 relative z-20">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
+                <div class="mb-3 p-2 rounded-xl bg-stone-50 text-stone-600">
+                    <i data-lucide="brain" class="w-6 h-6"></i>
+                </div>
+                <div class="text-3xl font-bold mb-1 text-indigo-700">Գիտելիք</div>
+                <div class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-2">Գլխավոր Ակնկալիք</div>
+                <div class="text-xs text-stone-500">Մասնակիցների 35%-ը փնտրում է նոր գիտելիք</div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
+                <div class="mb-3 p-2 rounded-xl bg-stone-50 text-stone-600">
+                    <i data-lucide="heart" class="w-6 h-6"></i>
+                </div>
+                <div class="text-3xl font-bold mb-1 text-emerald-600">Մասնակցություն</div>
+                <div class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-2">Գլխավոր Ներդրում</div>
+                <div class="text-xs text-stone-500">Խումբը պատրաստ է ակտիվ ներգրավվել</div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
+                <div class="mb-3 p-2 rounded-xl bg-stone-50 text-stone-600">
+                    <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                </div>
+                <div class="text-3xl font-bold mb-1 text-rose-700">Բարդություն</div>
+                <div class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-2">Գլխավոր Մտահոգություն</div>
+                <div class="text-xs text-stone-500">Վախ՝ չհասկանալու կամ խճճվելու</div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 1: EXPECTATIONS -->
+        <section>
+            <div class="mb-12 text-center max-w-2xl mx-auto">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-white shadow-md text-indigo-700">
+                  <i data-lucide="compass" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-3">Ինչի՞ ենք մենք ձգտում</h2>
+                <p class="text-stone-500 text-lg leading-relaxed">Մասնակիցների մեծամասնությունը դպրոց է գալիս ոչ միայն սովորելու, այլև փոխվելու։ Գիտելիքի պահանջը գերիշխող է, բայց համայնքային կապերը նույնպես կարևոր են։</p>
+            </div>
+          
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 h-[400px]">
+                    <h3 class="text-lg font-bold text-stone-800 mb-6 flex items-center gap-2">
+                        <span class="w-8 h-1 bg-indigo-600 rounded-full"></span>
+                        Կատեգորիաների Բաշխում
+                    </h3>
+                    <canvas id="expectationsChart"></canvas>
+                </div>
+                <div class="order-1 lg:order-2 space-y-4">
+                    <!-- Quote 1 -->
+                    <div class="bg-stone-50 p-6 rounded-xl border-l-4 border-stone-300 italic text-stone-700 relative group hover:bg-white hover:shadow-md transition-all">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-stone-300 group-hover:text-stone-400"></i>
+                        <p class="mb-3 font-serif leading-relaxed">"Մեծ սպասելիքներ ունեմ փիլիսոփայության վերաբերյալ ստանդարտ պատկերացումները փոխելու վերաբերյալ"</p>
+                        <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Աշխարհայացք</span>
+                    </div>
+                    <!-- Quote 2 -->
+                    <div class="bg-stone-50 p-6 rounded-xl border-l-4 border-stone-300 italic text-stone-700 relative group hover:bg-white hover:shadow-md transition-all">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-stone-300 group-hover:text-stone-400"></i>
+                        <p class="mb-3 font-serif leading-relaxed">"Փիլիսոփայության մեջ հասկանալ, թե որ ճյուղերն ու ուղղություններն են ավելի հոգեհարազատ"</p>
+                        <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Ինքնաճանաչում</span>
+                    </div>
+                    <!-- Quote 3 -->
+                    <div class="bg-stone-50 p-6 rounded-xl border-l-4 border-stone-300 italic text-stone-700 relative group hover:bg-white hover:shadow-md transition-all">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-stone-300 group-hover:text-stone-400"></i>
+                        <p class="mb-3 font-serif leading-relaxed">"Նոր գիտելիքների ձեռքբերում ոչ ստանդարտ և ձևական դասախոսության միջոցով"</p>
+                        <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Մեթոդաբանություն</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 2: CONTRIBUTIONS -->
+        <section>
+            <div class="mb-12 text-center max-w-2xl mx-auto">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-white shadow-md text-emerald-600">
+                  <i data-lucide="anchor" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-3">Ի՞նչ ենք մենք բերում</h2>
+                <p class="text-stone-500 text-lg leading-relaxed">Սա պարզապես լսարան չէ, սա համայնք է։ Մասնակիցները պատրաստ են կիսվել ամեն ինչով՝ էներգիայից մինչև մասնագիտական հմտություններ։</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-200 p-8">
+                <!-- Visual Bars Container -->
+                <div id="contributionsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Javascript will populate this -->
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-stone-100 grid grid-cols-1 md:grid-cols-2 gap-6">
+                   <div class="bg-emerald-50/50 p-4 rounded-xl">
+                     <h4 class="font-serif font-bold text-emerald-800 mb-2 flex items-center gap-2">
+                        <i data-lucide="lightbulb" class="w-4 h-4"></i> Ստեղծագործական ներուժ
+                     </h4>
+                     <p class="text-sm text-stone-600">Մասնակիցները պատրաստ են գրել էսսեներ, հոդվածներ, կատարել թարգմանություններ և կիսվել «հանճարեղ գաղափարներով»։</p>
+                   </div>
+                   <div class="bg-emerald-50/50 p-4 rounded-xl">
+                     <h4 class="font-serif font-bold text-emerald-800 mb-2 flex items-center gap-2">
+                        <i data-lucide="heart" class="w-4 h-4"></i> Էմոցիոնալ ներդրում
+                     </h4>
+                     <p class="text-sm text-stone-600">«Սեր», «Էներգիա», «Դրական էմոցիաներ» և «Ակտիվ լսողի դեր» — սրանք այն ոչ նյութական ակտիվներն են, որոնք կառուցում են ամուր համայնք։</p>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 3: CONCERNS -->
+        <section>
+            <div class="mb-12 text-center max-w-2xl mx-auto">
+                <div class="inline-flex p-3 rounded-full mb-4 bg-white shadow-md text-rose-700">
+                  <i data-lucide="alert-circle" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-3">Ինչի՞ց ենք վախենում</h2>
+                <p class="text-stone-500 text-lg leading-relaxed">Բնական է, որ նորը սկսելիս կան մտավախություններ։ Հիմնական վախը կապված է նյութի բարդության և ժամանակի սղության հետ։</p>
+            </div>
+          
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                 <div class="order-1 space-y-4">
+                   <div class="bg-white p-5 rounded-xl border-l-4 border-red-400 shadow-sm">
+                     <h4 class="font-bold text-stone-800">Իմացաբանական արգելքներ</h4>
+                     <p class="text-stone-600 text-sm mt-1">«Չեմ կարողանա լավ գրել», «կխճճվեմ հարցերում», «անտեղյակություն»։ Սա ցույց է տալիս պատասխանատվության բարձր զգացում։</p>
+                   </div>
+                   <div class="bg-white p-5 rounded-xl border-l-4 border-orange-400 shadow-sm">
+                     <h4 class="font-bold text-stone-800">Ռեսուրսային խնդիրներ</h4>
+                     <p class="text-stone-600 text-sm mt-1">Ժամանակի սղությունը ժամանակակից մարդու հիմնական խնդիրն է։</p>
+                   </div>
+                   <div class="bg-white p-5 rounded-xl border-l-4 border-stone-400 shadow-sm">
+                     <h4 class="font-bold text-stone-800">Ձանձրույթի վախ</h4>
+                     <p class="text-stone-600 text-sm mt-1">«Դասերը կլինեն ձանձրալի» — սա մարտահրավեր է դպրոցին՝ պահելու ինտերակտիվությունը։</p>
+                   </div>
+                 </div>
+                 <div class="order-2 h-[400px]">
+                    <canvas id="concernsChart"></canvas>
+                 </div>
+            </div>
+        </section>
+
+        <!-- EXPLORER SECTION -->
+        <section class="bg-white rounded-3xl shadow-xl border border-stone-200 overflow-hidden">
+            <div class="p-8 border-b border-stone-100 bg-stone-50">
+                <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Տվյալների Բանկ</h3>
+                <div class="flex flex-wrap gap-2" id="filterButtons">
+                    <button data-filter="all" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-stone-800 text-white shadow-md">Բոլորը</button>
+                    <button data-filter="expectations" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100">Ակնկալիքներ</button>
+                    <button data-filter="contributions" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100">Ներդրումներ</button>
+                    <button data-filter="concerns" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100">Մտահոգություններ</button>
+                </div>
+            </div>
+
+            <div class="h-[500px] overflow-y-auto p-8 custom-scrollbar">
+                <div id="explorerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Content will be injected here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+          <i data-lucide="brain" class="w-8 h-8 mx-auto text-stone-600 mb-6"></i>
+          <p class="font-serif italic text-lg mb-4">"Sapere Aude" — Համարձակվիր իմանալ</p>
+          <div class="h-px w-24 bg-stone-800 mx-auto my-6"></div>
+          <p class="text-sm">© 2024 School of Philosophy Dashboard</p>
+        </div>
+    </footer>
+
+    <!-- LOGIC SCRIPT -->
+    <script>
+        // --- DATA ---
+        const rawData = {
+          expectations: [
+            { text: "Նոր աշխարհընկալում", category: "Աշխարհայացք" },
+            { text: "Նոր հետաքրքրություններ", category: "Անձնային աճ" },
+            { text: "Հետաքրքիր և բովանդակալից զրույցներ", category: "Շփում/Համայնք" },
+            { text: "Ձեռք բերել գիտելիքներ փիլիսոփայության մասին", category: "Գիտելիք" },
+            { text: "Փիլ-ի մեջ հասկանալ, թե որ ճյուղերն ու ուղղություններն են ավելի հոգեհարազատ", category: "Ինքնաճանաչում" },
+            { text: "Շնդհ տեսական գիտելիքներ", category: "Գիտելիք" },
+            { text: "Փորձի փոխանակում", category: "Շփում/Համայնք" },
+            { text: "Մասնագիտական միջավայրի հետ շփվելու հնարավորություն", category: "Շփում/Համայնք" },
+            { text: "Նոր գիտելիքներ և գաղափարներ", category: "Գիտելիք" },
+            { text: "Մեծ սպասելիքներ ունեմ փիլիսոփայության վերաբերյալ ստանդարտ պատկերացումները փոխելու վերաբերյալ", category: "Աշխարհայացք" },
+            { text: "Քննադատական միտք", category: "Հմտություններ" },
+            { text: "Նոր ընկերներ", category: "Շփում/Համայնք" },
+            { text: "Օգտակար գիտելիքներ", category: "Գիտելիք" },
+            { text: "Բազմակողմանի մտածողություն", category: "Հմտություններ" },
+            { text: "Տրամաբանական մտածողություն", category: "Հմտություններ" },
+            { text: "Աշխարհայացքի զարգացում", category: "Աշխարհայացք" },
+            { text: "Մտածելակերպի ընդլայնում", category: "Աշխարհայացք" },
+            { text: "Քննադատական մտածողություն", category: "Հմտություններ" },
+            { text: "Շատ նոր ինֆորմացիա", category: "Գիտելիք" },
+            { text: "Նոր գիտելիքների ձեռքբերում ոչ ստանդարտ և ձևական դասախոսության միջոցով", category: "Գիտելիք" },
+            { text: "Ձեռք բերել մեծ գիտելիքների պաշար", category: "Գիտելիք" },
+            { text: "Փիլի ու փիլ մտածողության հիմնարար դրույթների հետ ծանոթացում", category: "Գիտելիք" },
+            { text: "Ինտերակտիվ քննարկումներ", category: "Շփում/Համայնք" },
+            { text: "Նեթվորքինգ, գաղափարակիցների հետ կապի հաստատում", category: "Շփում/Համայնք" },
+            { text: "Գիտելիքներ, որոնք դժվար թե այլ տեղ ստանամ", category: "Գիտելիք" },
+            { text: "Հետաքրքիր զրույցներ հետաքրքիր մարդկանց հետ", category: "Շփում/Համայնք" },
+            { text: "Ուրախ եմ, որ կան նման դասընթացներ", category: "Անձնային աճ" },
+            { text: "Ստեղծագործական աճ և հմտություններ", category: "Հմտություններ" },
+            { text: "Մասնագիտական ծանոթություններ", category: "Շփում/Համայնք" },
+            { text: "Նոր կապերի հաստատում, գաղափարների և մտքերի փոխանակում", category: "Շփում/Համայնք" },
+            { text: "Մտածելու նոր թեմաներ", category: "Աշխարհայացք" },
+            { text: "Փիլ համայնքի հետ ավելի մոտ ծանոթություն", category: "Շփում/Համայնք" }
+          ],
+          contributions: [
+            { text: "Energizer-ներ", category: "Էներգիա/Մթնոլորտ" },
+            { text: "Հանդես գալ ակտիվ լսողի դերում", category: "Մասնակցություն" },
+            { text: "Դրական էմոցիաներ", category: "Էներգիա/Մթնոլորտ" },
+            { text: "Որոշ գրված բաներ ունեմ, որոնք կարող եմ կիսվել կայքում", category: "Ստեղծագործություն" },
+            { text: "Մեծ ներգրավածություն", category: "Մասնակցություն" },
+            { text: "Կյանքի ժամեր", category: "Ռեսուրսներ (Ժամանակ)" },
+            { text: "Զրո գիտելիքներ ոլորտից", category: "Անկեղծություն" },
+            { text: "Անվստահ հաղորդակցվելու բարդույթներ", category: "Անկեղծություն" },
+            { text: "Ներկայություն", category: "Մասնակցություն" },
+            { text: "Իմ ձեռքբերած գիտելիքները կարող եմ կիսվել այլ մարդկանց հետ", category: "Գիտելիքի փոխանակում" },
+            { text: "Այլ կարծիք", category: "Գիտելիքի փոխանակում" },
+            { text: "Կարող եմ կիսվել հոգեբանության ոլորտի գիտելիքներով", category: "Գիտելիքի փոխանակում" },
+            { text: "Միշտ ներկա լինել", category: "Մասնակցություն" },
+            { text: "Ակտիվ մասնակցություն", category: "Մասնակցություն" },
+            { text: "Ցանկացած հարցով պատրաստ եմ օգնել", category: "Աջակցություն" },
+            { text: "Կարող եմ գրել ստեղծագործական աշխատանքներ, հոդվածներ", category: "Ստեղծագործություն" },
+            { text: "Հետաքրքիր թեմաների դեպքում կարող եմ ներդրում ունենալ", category: "Մասնակցություն" },
+            { text: "Կկիսվեմ ծրագրի հետ կապված ամեն ինչով", category: "Աջակցություն" },
+            { text: "Պատրաստ եմ կիսվել իմ հանճարեղ գաղափարներով", category: "Գիտելիքի փոխանակում" },
+            { text: "Ժամանակ, էներգիա, սեր", category: "Ռեսուրսներ (Ժամանակ)" },
+            { text: "Հետադարձ կապ հարցերի միջոցով", category: "Մասնակցություն" },
+            { text: "Հետաքրքիր մտահղացումներ", category: "Ստեղծագործություն" },
+            { text: "Ստեղծագործական մտքեր", category: "Ստեղծագործություն" },
+            { text: "Ինտերակտիվ մասի առաջարկներ", category: "Աջակցություն" },
+            { text: "Պատրաստ եմ օգնել սեմինարներ կազմակերպել", category: "Աջակցություն" },
+            { text: "Կարող եմ գրել էսսեներ, ստեղծագործել, թարգմանություններ", category: "Ստեղծագործություն" }
+          ],
+          concerns: [
+            { text: "Չեմ ստանա հարցերի պատասխաններ", category: "Սպասելիքներ" },
+            { text: "Որոշ թեմաներից անտեղյակություն", category: "Գիտելիքի պակաս" },
+            { text: "Նախնական գիտելիքների բացակայություն", category: "Գիտելիքի պակաս" },
+            { text: "Չեմ կարողանա լավ գրել էսսե", category: "Հմտություններ" },
+            { text: "Ավելի կխճճվեմ փիլ հարցերում ու չեմ կարողանա կողմնորոշվել", category: "Բարդություն" },
+            { text: "Չհասցնել բոլոր դասերին գալ", category: "Ժամանակ" },
+            { text: "Դասընթացի բարդությունը", category: "Բարդություն" },
+            { text: "Նյութի ծավալուն և բարդ լինելը", category: "Բարդություն" },
+            { text: "Դասերը կլինեն ձանձրալի, նյութին արդեն ծանոթ կլինեմ", category: "Ձանձրույթ" },
+            { text: "Չկարողանամ վերցնել ինֆորմացիայի ողջ ծավալը", category: "Բարդություն" },
+            { text: "Ժամանակի սղությունը", category: "Ժամանակ" },
+            { text: "Առաջին անգամ եմ ուսումնասիրում, հուսամ խնդիրներ չեն առաջանա", category: "Գիտելիքի պակաս" }
+          ]
+        };
+
+        const PALETTE = {
+            blue: '#4338CA', // Indigo 700
+            green: '#059669', // Emerald 600
+            red: '#BE123C', // Rose 700
+            bgBarBlue: 'rgba(67, 56, 202, 0.8)',
+            bgBarRed: 'rgba(190, 18, 60, 0.8)'
+        };
+
+        // --- HELPER FUNCTIONS ---
+        function aggregateData(data) {
+            const counts = {};
+            data.forEach(item => {
+                counts[item.category] = (counts[item.category] || 0) + 1;
+            });
+            return Object.entries(counts)
+                .map(([name, value]) => ({ name, value }))
+                .sort((a, b) => b.value - a.value);
+        }
+
+        // --- RENDER CHARTS ---
+        function initCharts() {
+            // 1. Expectations Chart
+            const expData = aggregateData(rawData.expectations);
+            const ctxExp = document.getElementById('expectationsChart').getContext('2d');
+            new Chart(ctxExp, {
+                type: 'bar',
+                data: {
+                    labels: expData.map(d => d.name),
+                    datasets: [{
+                        data: expData.map(d => d.value),
+                        backgroundColor: PALETTE.bgBarBlue,
+                        borderRadius: 4,
+                        barThickness: 24
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { 
+                            backgroundColor: '#fff', 
+                            titleColor: '#1C1917', 
+                            bodyColor: '#44403C', 
+                            borderColor: '#E7E5E4', 
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: false
+                        }
+                    },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { 
+                            grid: { display: false },
+                            ticks: { 
+                                color: '#44403C', 
+                                font: { family: 'Inter', size: 12, weight: 500 } 
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 2. Contributions Visual (Not a canvas chart, but HTML bars to match original visual)
+            const contribData = aggregateData(rawData.contributions);
+            const maxVal = contribData[0].value;
+            const contribContainer = document.getElementById('contributionsContainer');
+            
+            contribData.forEach(item => {
+                const widthPercent = (item.value / maxVal) * 100;
+                const html = `
+                    <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-emerald-50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold group-hover:scale-110 transition-transform">
+                            ${item.value}
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-stone-800">${item.name}</h4>
+                            <div class="h-1 bg-emerald-200 mt-1 rounded-full overflow-hidden w-full max-w-[200px]">
+                                <div class="h-full bg-emerald-500" style="width: ${widthPercent}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contribContainer.innerHTML += html;
+            });
+
+            // 3. Concerns Chart
+            const concernData = aggregateData(rawData.concerns);
+            const ctxCon = document.getElementById('concernsChart').getContext('2d');
+            new Chart(ctxCon, {
+                type: 'bar',
+                data: {
+                    labels: concernData.map(d => d.name),
+                    datasets: [{
+                        data: concernData.map(d => d.value),
+                        backgroundColor: PALETTE.bgBarRed,
+                        borderRadius: 4,
+                        barThickness: 24
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { 
+                            backgroundColor: '#fff', 
+                            titleColor: '#1C1917', 
+                            bodyColor: '#44403C', 
+                            borderColor: '#E7E5E4', 
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: false
+                        }
+                    },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { 
+                            grid: { display: false },
+                            ticks: { 
+                                color: '#44403C', 
+                                font: { family: 'Inter', size: 12, weight: 500 } 
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- EXPLORER SECTION LOGIC ---
+        function renderExplorer(filterType) {
+            const container = document.getElementById('explorerGrid');
+            container.innerHTML = ''; // Clear
+
+            let items = [];
+            if (filterType === 'all' || filterType === 'expectations') {
+                items = items.concat(rawData.expectations.map(i => ({...i, type: 'expectations'})));
+            }
+            if (filterType === 'all' || filterType === 'contributions') {
+                items = items.concat(rawData.contributions.map(i => ({...i, type: 'contributions'})));
+            }
+            if (filterType === 'all' || filterType === 'concerns') {
+                items = items.concat(rawData.concerns.map(i => ({...i, type: 'concerns'})));
+            }
+
+            items.forEach(item => {
+                let badgeClass = '';
+                if(item.type === 'expectations') badgeClass = 'bg-indigo-100 text-indigo-700';
+                else if(item.type === 'contributions') badgeClass = 'bg-emerald-100 text-emerald-700';
+                else badgeClass = 'bg-rose-100 text-rose-700';
+
+                const card = document.createElement('div');
+                card.className = "p-4 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 transition-colors group";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${badgeClass}">
+                            ${item.category}
+                        </span>
+                    </div>
+                    <p class="text-stone-700 font-medium leading-relaxed group-hover:text-stone-900">
+                        ${item.text}
+                    </p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function setupFilters() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Update visuals
+                    buttons.forEach(b => {
+                        b.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100";
+                    });
+                    e.target.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-stone-800 text-white shadow-md";
+                    
+                    // Filter logic
+                    renderExplorer(e.target.dataset.filter);
+                });
+            });
+        }
+
+        // --- INIT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            initCharts();
+            renderExplorer('all');
+            setupFilters();
+        });
+
+    </script>
+</body>
+</html>
