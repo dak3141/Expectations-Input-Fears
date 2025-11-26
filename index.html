@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School of Philosophy - Infographic</title>
+    <title>Մասնակիցների վերլուծություն</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,17 +21,13 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        stone: {
-                            50: '#FAFAF9',
-                            100: '#F5F5F4',
-                            200: '#E7E5E4',
-                            300: '#D6D3D1',
-                            400: '#A8A29E',
-                            500: '#78716C',
-                            600: '#57534E',
-                            700: '#44403C',
-                            800: '#292524',
-                            900: '#1C1917',
+                        brand: {
+                            blue: '#7FBCC9',   /* From the poster's blue bar */
+                            red: '#CD4631',    /* From the poster's red bar */
+                            yellow: '#DCC248', /* From the poster's yellow block */
+                            black: '#111111',
+                            white: '#F9F9F7',  /* Off-white paper look */
+                            gray: '#E5E5E5'
                         }
                     }
                 }
@@ -62,196 +58,167 @@
             background: #a8a29e;
         }
         body {
-            background-color: #FAFAF9;
+            background-color: #F9F9F7;
         }
     </style>
 </head>
-<body class="text-stone-800 antialiased selection:bg-amber-100">
+<body class="text-brand-black antialiased selection:bg-brand-yellow selection:text-black">
 
     <!-- HERO SECTION -->
-    <header class="relative py-20 px-4 md:py-32 overflow-hidden bg-stone-900 text-stone-100">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-           <svg width="100%" height="100%">
-             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
-             </pattern>
-             <rect width="100%" height="100%" fill="url(#grid)" />
-           </svg>
-        </div>
-        
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-800 border border-stone-700 text-amber-400 text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-            Data Visualization
-          </div>
-          <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-stone-400">
-            School of Philosophy
-          </h1>
-          <p class="text-lg md:text-2xl text-stone-400 max-w-2xl mx-auto font-light leading-relaxed">
-            30 մասնակից։ 30 աշխարհայացք։ Մեկ նպատակ։
-            <br class="hidden md:block"/>
-            <span class="text-stone-500 text-base mt-4 block">
-              Սա մեր խմբի հավաքական գիտակցության վերլուծությունն է։
-            </span>
-          </p>
-          
-          <div class="mt-12 flex justify-center">
-            <i data-lucide="arrow-down" class="text-stone-500 animate-bounce w-6 h-6"></i>
-          </div>
+    <header class="relative py-24 px-4 bg-brand-white text-center border-b border-brand-gray">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <!-- Logo Placeholder (Optional, based on branding) -->
+            <div class="mb-8 flex justify-center">
+                 <i data-lucide="brain" class="w-12 h-12 text-brand-black"></i>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight text-brand-black tracking-tight">
+                Մասնակիցների ակնկալիքներ,<br/> ներդրումներ և մտահոգություններ
+            </h1>
+            
+            <div class="w-24 h-1 bg-brand-black mx-auto mt-8"></div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-32">
         
         <!-- KPI ROW -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 -mt-24 relative z-20">
-            <!-- Card 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-                <div class="mb-3 p-2 rounded-xl bg-stone-50 text-stone-600">
-                    <i data-lucide="brain" class="w-6 h-6"></i>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-24 relative z-20">
+            <!-- Card 1: Blue -->
+            <div class="bg-white p-8 rounded-none border-t-8 border-brand-blue shadow-lg flex flex-col items-center text-center">
+                <div class="mb-4 p-3 rounded-full bg-blue-50 text-brand-blue">
+                    <i data-lucide="compass" class="w-8 h-8"></i>
                 </div>
-                <div class="text-3xl font-bold mb-1 text-indigo-700">Գիտելիք</div>
-                <div class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-2">Գլխավոր Ակնկալիք</div>
-                <div class="text-xs text-stone-500">Մասնակիցների 35%-ը փնտրում է նոր գիտելիք</div>
+                <div class="text-3xl font-bold mb-2 text-brand-black">Գիտելիք</div>
+                <div class="text-xs font-bold text-brand-blue uppercase tracking-widest mb-2">Գլխավոր Ակնկալիք</div>
+                <div class="text-sm text-gray-500">Մասնակիցների 35%-ը փնտրում է նոր գիտելիք</div>
             </div>
-            <!-- Card 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-                <div class="mb-3 p-2 rounded-xl bg-stone-50 text-stone-600">
-                    <i data-lucide="heart" class="w-6 h-6"></i>
+            <!-- Card 2: Yellow -->
+            <div class="bg-white p-8 rounded-none border-t-8 border-brand-yellow shadow-lg flex flex-col items-center text-center">
+                <div class="mb-4 p-3 rounded-full bg-yellow-50 text-yellow-700">
+                    <i data-lucide="heart" class="w-8 h-8"></i>
                 </div>
-                <div class="text-3xl font-bold mb-1 text-emerald-600">Մասնակցություն</div>
-                <div class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-2">Գլխավոր Ներդրում</div>
-                <div class="text-xs text-stone-500">Խումբը պատրաստ է ակտիվ ներգրավվել</div>
+                <div class="text-3xl font-bold mb-2 text-brand-black">Մասնակցություն</div>
+                <div class="text-xs font-bold text-yellow-600 uppercase tracking-widest mb-2">Գլխավոր Ներդրում</div>
+                <div class="text-sm text-gray-500">Խումբը պատրաստ է ակտիվ ներգրավվել</div>
             </div>
-            <!-- Card 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-                <div class="mb-3 p-2 rounded-xl bg-stone-50 text-stone-600">
-                    <i data-lucide="alert-circle" class="w-6 h-6"></i>
+            <!-- Card 3: Red -->
+            <div class="bg-white p-8 rounded-none border-t-8 border-brand-red shadow-lg flex flex-col items-center text-center">
+                <div class="mb-4 p-3 rounded-full bg-red-50 text-brand-red">
+                    <i data-lucide="alert-circle" class="w-8 h-8"></i>
                 </div>
-                <div class="text-3xl font-bold mb-1 text-rose-700">Բարդություն</div>
-                <div class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-2">Գլխավոր Մտահոգություն</div>
-                <div class="text-xs text-stone-500">Վախ՝ չհասկանալու կամ խճճվելու</div>
+                <div class="text-3xl font-bold mb-2 text-brand-black">Բարդություն</div>
+                <div class="text-xs font-bold text-brand-red uppercase tracking-widest mb-2">Գլխավոր Մտահոգություն</div>
+                <div class="text-sm text-gray-500">Վախ՝ չհասկանալու կամ խճճվելու</div>
             </div>
         </section>
 
-        <!-- CHAPTER 1: EXPECTATIONS -->
+        <!-- CHAPTER 1: EXPECTATIONS (BLUE) -->
         <section>
             <div class="mb-12 text-center max-w-2xl mx-auto">
-                <div class="inline-flex p-3 rounded-full mb-4 bg-white shadow-md text-indigo-700">
-                  <i data-lucide="compass" class="w-8 h-8"></i>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-3">Ինչի՞ ենք մենք ձգտում</h2>
-                <p class="text-stone-500 text-lg leading-relaxed">Մասնակիցների մեծամասնությունը դպրոց է գալիս ոչ միայն սովորելու, այլև փոխվելու։ Գիտելիքի պահանջը գերիշխող է, բայց համայնքային կապերը նույնպես կարևոր են։</p>
+                <h2 class="text-3xl md:text-4xl font-sans font-bold text-brand-black mb-3 flex items-center justify-center gap-3">
+                    <span class="w-3 h-3 bg-brand-blue rounded-full"></span>
+                    Ինչի՞ ենք մենք ձգտում
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed mt-4">Մասնակիցների մեծամասնությունը դպրոց է գալիս ոչ միայն սովորելու, այլև փոխվելու։ Գիտելիքի պահանջը գերիշխող է։</p>
             </div>
           
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-l-2 border-brand-blue pl-6 md:pl-12">
                 <div class="order-2 lg:order-1 h-[400px]">
-                    <h3 class="text-lg font-bold text-stone-800 mb-6 flex items-center gap-2">
-                        <span class="w-8 h-1 bg-indigo-600 rounded-full"></span>
-                        Կատեգորիաների Բաշխում
-                    </h3>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase mb-6 tracking-widest">Կատեգորիաներ</h3>
                     <canvas id="expectationsChart"></canvas>
                 </div>
-                <div class="order-1 lg:order-2 space-y-4">
+                <div class="order-1 lg:order-2 space-y-6">
                     <!-- Quote 1 -->
-                    <div class="bg-stone-50 p-6 rounded-xl border-l-4 border-stone-300 italic text-stone-700 relative group hover:bg-white hover:shadow-md transition-all">
-                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-stone-300 group-hover:text-stone-400"></i>
-                        <p class="mb-3 font-serif leading-relaxed">"Մեծ սպասելիքներ ունեմ փիլիսոփայության վերաբերյալ ստանդարտ պատկերացումները փոխելու վերաբերյալ"</p>
-                        <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Աշխարհայացք</span>
+                    <div class="bg-white p-6 shadow-sm border-l-4 border-brand-blue relative">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-brand-blue opacity-20"></i>
+                        <p class="mb-3 font-serif italic text-lg text-gray-800">"Մեծ սպասելիքներ ունեմ փիլիսոփայության վերաբերյալ ստանդարտ պատկերացումները փոխելու վերաբերյալ"</p>
+                        <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Աշխարհայացք</span>
                     </div>
                     <!-- Quote 2 -->
-                    <div class="bg-stone-50 p-6 rounded-xl border-l-4 border-stone-300 italic text-stone-700 relative group hover:bg-white hover:shadow-md transition-all">
-                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-stone-300 group-hover:text-stone-400"></i>
-                        <p class="mb-3 font-serif leading-relaxed">"Փիլիսոփայության մեջ հասկանալ, թե որ ճյուղերն ու ուղղություններն են ավելի հոգեհարազատ"</p>
-                        <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Ինքնաճանաչում</span>
-                    </div>
-                    <!-- Quote 3 -->
-                    <div class="bg-stone-50 p-6 rounded-xl border-l-4 border-stone-300 italic text-stone-700 relative group hover:bg-white hover:shadow-md transition-all">
-                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-stone-300 group-hover:text-stone-400"></i>
-                        <p class="mb-3 font-serif leading-relaxed">"Նոր գիտելիքների ձեռքբերում ոչ ստանդարտ և ձևական դասախոսության միջոցով"</p>
-                        <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Մեթոդաբանություն</span>
+                    <div class="bg-white p-6 shadow-sm border-l-4 border-brand-blue relative">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-4 h-4 text-brand-blue opacity-20"></i>
+                        <p class="mb-3 font-serif italic text-lg text-gray-800">"Փիլիսոփայության մեջ հասկանալ, թե որ ճյուղերն ու ուղղություններն են ավելի հոգեհարազատ"</p>
+                        <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Ինքնաճանաչում</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CHAPTER 2: CONTRIBUTIONS -->
+        <!-- CHAPTER 2: CONTRIBUTIONS (YELLOW) -->
         <section>
             <div class="mb-12 text-center max-w-2xl mx-auto">
-                <div class="inline-flex p-3 rounded-full mb-4 bg-white shadow-md text-emerald-600">
-                  <i data-lucide="anchor" class="w-8 h-8"></i>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-3">Ի՞նչ ենք մենք բերում</h2>
-                <p class="text-stone-500 text-lg leading-relaxed">Սա պարզապես լսարան չէ, սա համայնք է։ Մասնակիցները պատրաստ են կիսվել ամեն ինչով՝ էներգիայից մինչև մասնագիտական հմտություններ։</p>
+                <h2 class="text-3xl md:text-4xl font-sans font-bold text-brand-black mb-3 flex items-center justify-center gap-3">
+                    <span class="w-3 h-3 bg-brand-yellow rounded-full"></span>
+                    Ի՞նչ ենք մենք բերում
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed mt-4">Սա պարզապես լսարան չէ, սա համայնք է։ Մասնակիցները պատրաստ են կիսվել ամեն ինչով՝ էներգիայից մինչև մասնագիտական հմտություններ։</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm border border-stone-200 p-8">
+            <div class="bg-white p-8 shadow-lg border-t-4 border-brand-yellow">
                 <!-- Visual Bars Container -->
-                <div id="contributionsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div id="contributionsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Javascript will populate this -->
                 </div>
                 
-                <div class="mt-8 pt-8 border-t border-stone-100 grid grid-cols-1 md:grid-cols-2 gap-6">
-                   <div class="bg-emerald-50/50 p-4 rounded-xl">
-                     <h4 class="font-serif font-bold text-emerald-800 mb-2 flex items-center gap-2">
-                        <i data-lucide="lightbulb" class="w-4 h-4"></i> Ստեղծագործական ներուժ
+                <div class="mt-12 pt-8 border-t border-gray-100 grid grid-cols-1 md:grid-cols-2 gap-8">
+                   <div class="bg-yellow-50 p-6 rounded-sm">
+                     <h4 class="font-bold text-brand-black mb-2 flex items-center gap-2">
+                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-600"></i> Ստեղծագործական ներուժ
                      </h4>
-                     <p class="text-sm text-stone-600">Մասնակիցները պատրաստ են գրել էսսեներ, հոդվածներ, կատարել թարգմանություններ և կիսվել «հանճարեղ գաղափարներով»։</p>
+                     <p class="text-sm text-gray-700">Մասնակիցները պատրաստ են գրել էսսեներ, հոդվածներ, կատարել թարգմանություններ և կիսվել «հանճարեղ գաղափարներով»։</p>
                    </div>
-                   <div class="bg-emerald-50/50 p-4 rounded-xl">
-                     <h4 class="font-serif font-bold text-emerald-800 mb-2 flex items-center gap-2">
-                        <i data-lucide="heart" class="w-4 h-4"></i> Էմոցիոնալ ներդրում
+                   <div class="bg-yellow-50 p-6 rounded-sm">
+                     <h4 class="font-bold text-brand-black mb-2 flex items-center gap-2">
+                        <i data-lucide="heart" class="w-5 h-5 text-yellow-600"></i> Էմոցիոնալ ներդրում
                      </h4>
-                     <p class="text-sm text-stone-600">«Սեր», «Էներգիա», «Դրական էմոցիաներ» և «Ակտիվ լսողի դեր» — սրանք այն ոչ նյութական ակտիվներն են, որոնք կառուցում են ամուր համայնք։</p>
+                     <p class="text-sm text-gray-700">«Սեր», «Էներգիա», «Դրական էմոցիաներ» և «Ակտիվ լսողի դեր» — սրանք այն ոչ նյութական ակտիվներն են, որոնք կառուցում են ամուր համայնք։</p>
                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CHAPTER 3: CONCERNS -->
+        <!-- CHAPTER 3: CONCERNS (RED) -->
         <section>
             <div class="mb-12 text-center max-w-2xl mx-auto">
-                <div class="inline-flex p-3 rounded-full mb-4 bg-white shadow-md text-rose-700">
-                  <i data-lucide="alert-circle" class="w-8 h-8"></i>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-3">Ինչի՞ց ենք վախենում</h2>
-                <p class="text-stone-500 text-lg leading-relaxed">Բնական է, որ նորը սկսելիս կան մտավախություններ։ Հիմնական վախը կապված է նյութի բարդության և ժամանակի սղության հետ։</p>
+                <h2 class="text-3xl md:text-4xl font-sans font-bold text-brand-black mb-3 flex items-center justify-center gap-3">
+                    <span class="w-3 h-3 bg-brand-red rounded-full"></span>
+                    Ինչի՞ց ենք վախենում
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed mt-4">Բնական է, որ նորը սկսելիս կան մտավախություններ։ Հիմնական վախը կապված է նյութի բարդության և ժամանակի սղության հետ։</p>
             </div>
           
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                 <div class="order-1 space-y-4">
-                   <div class="bg-white p-5 rounded-xl border-l-4 border-red-400 shadow-sm">
-                     <h4 class="font-bold text-stone-800">Իմացաբանական արգելքներ</h4>
-                     <p class="text-stone-600 text-sm mt-1">«Չեմ կարողանա լավ գրել», «կխճճվեմ հարցերում», «անտեղյակություն»։ Սա ցույց է տալիս պատասխանատվության բարձր զգացում։</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-r-2 border-brand-red pr-6 md:pr-12">
+                 <div class="order-1 space-y-6">
+                   <div class="bg-white p-6 shadow-sm border-l-4 border-brand-red">
+                     <h4 class="font-bold text-brand-black">Իմացաբանական արգելքներ</h4>
+                     <p class="text-gray-600 text-sm mt-1">«Չեմ կարողանա լավ գրել», «կխճճվեմ հարցերում», «անտեղյակություն»։ Սա ցույց է տալիս պատասխանատվության բարձր զգացում։</p>
                    </div>
-                   <div class="bg-white p-5 rounded-xl border-l-4 border-orange-400 shadow-sm">
-                     <h4 class="font-bold text-stone-800">Ռեսուրսային խնդիրներ</h4>
-                     <p class="text-stone-600 text-sm mt-1">Ժամանակի սղությունը ժամանակակից մարդու հիմնական խնդիրն է։</p>
-                   </div>
-                   <div class="bg-white p-5 rounded-xl border-l-4 border-stone-400 shadow-sm">
-                     <h4 class="font-bold text-stone-800">Ձանձրույթի վախ</h4>
-                     <p class="text-stone-600 text-sm mt-1">«Դասերը կլինեն ձանձրալի» — սա մարտահրավեր է դպրոցին՝ պահելու ինտերակտիվությունը։</p>
+                   <div class="bg-white p-6 shadow-sm border-l-4 border-brand-red opacity-80">
+                     <h4 class="font-bold text-brand-black">Ռեսուրսային խնդիրներ</h4>
+                     <p class="text-gray-600 text-sm mt-1">Ժամանակի սղությունը ժամանակակից մարդու հիմնական խնդիրն է։</p>
                    </div>
                  </div>
                  <div class="order-2 h-[400px]">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase mb-6 tracking-widest text-right">Կատեգորիաներ</h3>
                     <canvas id="concernsChart"></canvas>
                  </div>
             </div>
         </section>
 
         <!-- EXPLORER SECTION -->
-        <section class="bg-white rounded-3xl shadow-xl border border-stone-200 overflow-hidden">
-            <div class="p-8 border-b border-stone-100 bg-stone-50">
-                <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Տվյալների Բանկ</h3>
-                <div class="flex flex-wrap gap-2" id="filterButtons">
-                    <button data-filter="all" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-stone-800 text-white shadow-md">Բոլորը</button>
-                    <button data-filter="expectations" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100">Ակնկալիքներ</button>
-                    <button data-filter="contributions" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100">Ներդրումներ</button>
-                    <button data-filter="concerns" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100">Մտահոգություններ</button>
+        <section class="bg-white shadow-xl border-t border-gray-100">
+            <div class="p-8 border-b border-gray-100 bg-brand-white">
+                <h3 class="text-2xl font-bold text-brand-black mb-6">Տվյալների Բանկ</h3>
+                <div class="flex flex-wrap gap-3" id="filterButtons">
+                    <button data-filter="all" class="filter-btn px-6 py-2 bg-brand-black text-white text-sm font-bold tracking-wide hover:opacity-90 transition-all">ԲՈԼՈՐԸ</button>
+                    <button data-filter="expectations" class="filter-btn px-6 py-2 bg-white text-brand-black border border-gray-300 text-sm font-bold tracking-wide hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all">ԱԿՆԿԱԼԻՔՆԵՐ</button>
+                    <button data-filter="contributions" class="filter-btn px-6 py-2 bg-white text-brand-black border border-gray-300 text-sm font-bold tracking-wide hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-all">ՆԵՐԴՐՈՒՄՆԵՐ</button>
+                    <button data-filter="concerns" class="filter-btn px-6 py-2 bg-white text-brand-black border border-gray-300 text-sm font-bold tracking-wide hover:bg-brand-red hover:text-white hover:border-brand-red transition-all">ՄՏԱՀՈԳՈՒԹՅՈՒՆՆԵՐ</button>
                 </div>
             </div>
 
-            <div class="h-[500px] overflow-y-auto p-8 custom-scrollbar">
+            <div class="h-[500px] overflow-y-auto p-8 custom-scrollbar bg-white">
                 <div id="explorerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- Content will be injected here -->
                 </div>
@@ -260,12 +227,12 @@
 
     </main>
 
-    <footer class="bg-stone-900 text-stone-400 py-12 text-center">
+    <footer class="bg-brand-black text-white py-12 text-center">
         <div class="max-w-4xl mx-auto px-4">
-          <i data-lucide="brain" class="w-8 h-8 mx-auto text-stone-600 mb-6"></i>
-          <p class="font-serif italic text-lg mb-4">"Sapere Aude" — Համարձակվիր իմանալ</p>
-          <div class="h-px w-24 bg-stone-800 mx-auto my-6"></div>
-          <p class="text-sm">© 2024 School of Philosophy Dashboard</p>
+          <i data-lucide="brain" class="w-8 h-8 mx-auto text-gray-500 mb-6"></i>
+          <p class="font-serif italic text-lg mb-4 text-gray-300">"Sapere Aude" — Համարձակվիր իմանալ</p>
+          <div class="h-px w-24 bg-gray-700 mx-auto my-6"></div>
+          <p class="text-sm text-gray-500">© 2025 School of Philosophy</p>
         </div>
     </footer>
 
@@ -352,11 +319,10 @@
         };
 
         const PALETTE = {
-            blue: '#4338CA', // Indigo 700
-            green: '#059669', // Emerald 600
-            red: '#BE123C', // Rose 700
-            bgBarBlue: 'rgba(67, 56, 202, 0.8)',
-            bgBarRed: 'rgba(190, 18, 60, 0.8)'
+            blue: '#7FBCC9',
+            red: '#CD4631',
+            yellow: '#DCC248',
+            black: '#111111'
         };
 
         // --- HELPER FUNCTIONS ---
@@ -372,7 +338,7 @@
 
         // --- RENDER CHARTS ---
         function initCharts() {
-            // 1. Expectations Chart
+            // 1. Expectations Chart (Blue)
             const expData = aggregateData(rawData.expectations);
             const ctxExp = document.getElementById('expectationsChart').getContext('2d');
             new Chart(ctxExp, {
@@ -381,8 +347,8 @@
                     labels: expData.map(d => d.name),
                     datasets: [{
                         data: expData.map(d => d.value),
-                        backgroundColor: PALETTE.bgBarBlue,
-                        borderRadius: 4,
+                        backgroundColor: PALETTE.blue,
+                        borderRadius: 0,
                         barThickness: 24
                     }]
                 },
@@ -393,11 +359,9 @@
                     plugins: {
                         legend: { display: false },
                         tooltip: { 
-                            backgroundColor: '#fff', 
-                            titleColor: '#1C1917', 
-                            bodyColor: '#44403C', 
-                            borderColor: '#E7E5E4', 
-                            borderWidth: 1,
+                            backgroundColor: '#111', 
+                            titleColor: '#fff', 
+                            bodyColor: '#ddd', 
                             padding: 12,
                             displayColors: false
                         }
@@ -407,7 +371,7 @@
                         y: { 
                             grid: { display: false },
                             ticks: { 
-                                color: '#44403C', 
+                                color: '#111', 
                                 font: { family: 'Inter', size: 12, weight: 500 } 
                             }
                         }
@@ -415,7 +379,7 @@
                 }
             });
 
-            // 2. Contributions Visual (Not a canvas chart, but HTML bars to match original visual)
+            // 2. Contributions Visual (Yellow)
             const contribData = aggregateData(rawData.contributions);
             const maxVal = contribData[0].value;
             const contribContainer = document.getElementById('contributionsContainer');
@@ -423,14 +387,14 @@
             contribData.forEach(item => {
                 const widthPercent = (item.value / maxVal) * 100;
                 const html = `
-                    <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-emerald-50 transition-colors group">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold group-hover:scale-110 transition-transform">
+                    <div class="flex items-center gap-4 p-3 hover:bg-yellow-50 transition-colors group">
+                        <div class="text-xl font-bold text-yellow-600 w-8 text-center group-hover:scale-110 transition-transform">
                             ${item.value}
                         </div>
                         <div class="flex-1">
-                            <h4 class="font-bold text-stone-800">${item.name}</h4>
-                            <div class="h-1 bg-emerald-200 mt-1 rounded-full overflow-hidden w-full max-w-[200px]">
-                                <div class="h-full bg-emerald-500" style="width: ${widthPercent}%"></div>
+                            <h4 class="font-bold text-brand-black text-sm uppercase tracking-wide mb-2">${item.name}</h4>
+                            <div class="h-2 bg-gray-100 w-full">
+                                <div class="h-full bg-brand-yellow" style="width: ${widthPercent}%"></div>
                             </div>
                         </div>
                     </div>
@@ -438,7 +402,7 @@
                 contribContainer.innerHTML += html;
             });
 
-            // 3. Concerns Chart
+            // 3. Concerns Chart (Red)
             const concernData = aggregateData(rawData.concerns);
             const ctxCon = document.getElementById('concernsChart').getContext('2d');
             new Chart(ctxCon, {
@@ -447,8 +411,8 @@
                     labels: concernData.map(d => d.name),
                     datasets: [{
                         data: concernData.map(d => d.value),
-                        backgroundColor: PALETTE.bgBarRed,
-                        borderRadius: 4,
+                        backgroundColor: PALETTE.red,
+                        borderRadius: 0,
                         barThickness: 24
                     }]
                 },
@@ -459,11 +423,9 @@
                     plugins: {
                         legend: { display: false },
                         tooltip: { 
-                            backgroundColor: '#fff', 
-                            titleColor: '#1C1917', 
-                            bodyColor: '#44403C', 
-                            borderColor: '#E7E5E4', 
-                            borderWidth: 1,
+                            backgroundColor: '#111', 
+                            titleColor: '#fff', 
+                            bodyColor: '#ddd', 
                             padding: 12,
                             displayColors: false
                         }
@@ -473,9 +435,10 @@
                         y: { 
                             grid: { display: false },
                             ticks: { 
-                                color: '#44403C', 
+                                color: '#111', 
                                 font: { family: 'Inter', size: 12, weight: 500 } 
-                            }
+                            },
+                            position: 'right' // Align labels to right for this one
                         }
                     }
                 }
@@ -500,19 +463,30 @@
 
             items.forEach(item => {
                 let badgeClass = '';
-                if(item.type === 'expectations') badgeClass = 'bg-indigo-100 text-indigo-700';
-                else if(item.type === 'contributions') badgeClass = 'bg-emerald-100 text-emerald-700';
-                else badgeClass = 'bg-rose-100 text-rose-700';
+                let borderClass = '';
+                
+                if(item.type === 'expectations') {
+                    badgeClass = 'text-brand-blue';
+                    borderClass = 'border-l-4 border-brand-blue';
+                }
+                else if(item.type === 'contributions') {
+                    badgeClass = 'text-yellow-600';
+                    borderClass = 'border-l-4 border-brand-yellow';
+                }
+                else {
+                    badgeClass = 'text-brand-red';
+                    borderClass = 'border-l-4 border-brand-red';
+                }
 
                 const card = document.createElement('div');
-                card.className = "p-4 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 transition-colors group";
+                card.className = `p-4 bg-white border border-gray-100 ${borderClass} hover:shadow-md transition-all group`;
                 card.innerHTML = `
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${badgeClass}">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-[10px] font-bold uppercase tracking-widest ${badgeClass}">
                             ${item.category}
                         </span>
                     </div>
-                    <p class="text-stone-700 font-medium leading-relaxed group-hover:text-stone-900">
+                    <p class="text-brand-black font-medium leading-relaxed">
                         ${item.text}
                     </p>
                 `;
@@ -524,11 +498,13 @@
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    // Update visuals
+                    // Update visuals - Reset all
                     buttons.forEach(b => {
-                        b.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-white text-stone-600 border border-stone-200 hover:bg-stone-100";
+                        b.className = "filter-btn px-6 py-2 bg-white text-brand-black border border-gray-300 text-sm font-bold tracking-wide hover:bg-gray-100 transition-all";
                     });
-                    e.target.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-stone-800 text-white shadow-md";
+                    
+                    // Set Active
+                    e.target.className = "filter-btn px-6 py-2 bg-brand-black text-white text-sm font-bold tracking-wide transition-all";
                     
                     // Filter logic
                     renderExplorer(e.target.dataset.filter);
